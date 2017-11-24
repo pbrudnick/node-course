@@ -58,3 +58,7 @@ typings/
 .env
 
 .vscode
+
+# ignore answers for activities
+solved
+*.ok.js
