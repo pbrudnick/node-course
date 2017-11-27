@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "My NodeJS course",
   "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pbrudnick/node-course.git"
+  },
+  "scripts": {
+    "test": "mocha"
   },
   "author": "pbrudnick",
   "license": "MIT",
@@ -18,5 +18,9 @@
   "homepage": "https://github.com/pbrudnick/node-course#readme",
   "dependencies": {
     "countryjs": "^1.8.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
   }
 }
