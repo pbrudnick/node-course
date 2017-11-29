@@ -34,4 +34,5 @@ const birds = [
   // imprimir lo siguiente:
   // 1. array de nombres de todos los pájaros
   // 2. obtener el objeto completo del que tiene nombre "Zorzal Colorado"
-  // 3. array de nombres de los pájaros familia Tirannydae
+  // 3. array de nombres de los pájaros familia "Tirannydae"
+  // 4. cantidad de pájaros de la familia "Furnaridae"
