@@ -1,4 +1,4 @@
-const goalsModule = require("../15.goals"), 
+const goalsModule = require("../17.goals"), 
   chai = require("chai"),
   expect = chai.expect;
 
