@@ -8,7 +8,8 @@
     "url": "git+https://github.com/pbrudnick/node-course.git"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "test-coverage": "NODE_ENV=test istanbul cover _mocha -- -R spec"
   },
   "author": "pbrudnick",
   "license": "MIT",
@@ -18,10 +19,12 @@
   "homepage": "https://github.com/pbrudnick/node-course#readme",
   "dependencies": {
     "countryjs": "^1.8.0",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "request": "^2.83.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "istanbul": "^0.4.5",
     "mocha": "^4.0.1"
   }
 }
