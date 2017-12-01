@@ -33,9 +33,13 @@ function getGoalsFrom(player) {
   return goals.filter(g => g.player.toLowerCase() === player.toLowerCase());
 }
 
-function asyncTaskAndGetGoals(callback) {
+function asyncTaskAndGetGoals(err, callback) {
   setTimeout(() => {
-    callback(goals);
+    if (err) {
+      callback(err, null);
+      return;
+    }
+    callback(null, goals);
   }, 100);
 }
 

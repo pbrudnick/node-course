@@ -7,6 +7,7 @@ describe("tests for goals", () => {
   it("should return the Messi's goals", () => {
     const goals = goalsModule.getGoalsFrom("Messi");
     expect(goals).to.have.length(2);
+    expect(goals[0]).to.have.property("score");
     expect(goals[0].against).to.be.eql("Real Madrid");
     expect(goals[1].against).to.be.eql("Estudiantes");
   });
@@ -19,9 +20,20 @@ describe("tests for goals", () => {
 
   describe("now testing async", () => {
 
-    it("should return all the goals", (done) => {
-      goalsModule.asyncTaskAndGetGoals((result) => {
-        expect(result).to.be.eql(goalsModule.goals);
+    it("should return all the goals if no errors", (done) => {
+      let err = null;
+      goalsModule.asyncTaskAndGetGoals(err, (err, goals) => {
+        expect(err).to.be.eql(null);
+        expect(goals).to.be.eql(goalsModule.goals);
+        done();
+      });
+    });
+
+    it("should return error and no goals if there is an error", (done) => {
+      let myError = new Error("an error");
+      goalsModule.asyncTaskAndGetGoals(myError, (err, goals) => {
+        expect(err).to.be.eql(myError);
+        expect(goals).to.be.eql(null);
         done();
       });
     });
