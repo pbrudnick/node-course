@@ -5,7 +5,7 @@ function getNodeRepos(callback) {
   const options = {
     url: "https://api.github.com/orgs/nodejs/repos",
     headers: {
-      'User-Agent': 'node-course'
+      'user-agent': 'node-course',
     }
   }
   request.get(options, (err, response, body) => {
@@ -17,8 +17,10 @@ function getNodeRepos(callback) {
   });
 }
 
-getNodeRepos((err, repos) => {
-  console.log(repos.map(r => {
-    return {"name": r.name, "clone_url": r.clone_url};
-  }));
-});
+exports.getNodeRepos = getNodeRepos;
+
+// getNodeRepos((err, repos) => {
+//   console.log(repos.map(r => {
+//     return {"name": r.name, "clone_url": r.clone_url};
+//   }));
+// });
